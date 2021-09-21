@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+ipykernel = "*"
+autopep8 = "*"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+seaborn = "*"
+scipy = "*"
+scikit-learn = "*"
+tensorflow = "*"
+nltk = "*"
+spacy = {extras = ["lookups", "transformers"], version = "*"}
+gensim = "*"
+pyLDAvis = "==3.2.2"
+ipywidgets = "*"
+flask = {extras = ["async"], version = "*"}
+python-dotenv = "*"
+gunicorn = "*"
+beautifulsoup4 = "*"
+spacytextblob = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
