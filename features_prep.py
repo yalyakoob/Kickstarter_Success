@@ -6,7 +6,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
 sid = SentimentIntensityAnalyzer()
-nlp = spacy.load('en_core_web_lg')
+# nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_md')
 nlp.add_pipe('spacytextblob')
 
 
@@ -14,22 +15,22 @@ def subcatego(cat_mess: str) -> str:
     r = re.compile('slug...([a-zA-Z 0-9]+)/([a-zA-Z 0-9]+)')
     f = r.findall(cat_mess)
     if len(f)>0:
-        return f[-1]  # only difference here
+        return f[0][-1]  # only difference here
     else:
         s = re.compile('slug...([a-zA-Z 0-9]+)')
         g = s.findall(cat_mess)
-        return g[0]
+        return g[0]      # because some without subcat
 
 
 def catego(cat_mess: str) -> str:
     r = re.compile('slug...([a-zA-Z 0-9]+)/([a-zA-Z 0-9]+)')
     f = r.findall(cat_mess)
     if len(f)>0:
-        return f[0]  # only difference here
+        return f[0][0]  # only difference here
     else:
         s = re.compile('slug...([a-zA-Z 0-9]+)')
         g = s.findall(cat_mess)
-        return g[0]
+        return g[0]      # because some without subcat
 
 
 def wrangle2(df):
@@ -52,7 +53,7 @@ def wrangle2(df):
     df = df.loc[df.state != 'live']
     df.loc[df.state == 'canceled', 'state'] = 0
     df.loc[df.state == 'failed', 'state'] = 0
-    df.loc[df.state == 'successful'] = 1
+    df.loc[df.state == 'successful', 'state'] = 1 #this was it :)
     df = df.rename(columns={'state': 'success'})
 
     df['goal_usd'] = round(df['goal'] * df['static_usd_rate'],2)
@@ -63,14 +64,10 @@ def wrangle2(df):
     days = df['deadline'] - df['launched_at']
     df['campaign_duration_in_days'] = days.dt.round('d').dt.days
 
-    # df['subcategory'] = df['category'].apply(lambda x: subcatego(x)) #def above
-    # df['category'] = df['category'].apply(lambda x: catego(x))       #def above
-
     df['name_blurb'] = [i for i in zip(df.name, df.blurb)]
     
     droppable=['converted_pledged_amount','creator','currency','currency_symbol','currency_trailing_code','current_currency','fx_rate','photo','pledged','profile','slug','source_url','state_changed_at','urls', 'usd_type','spotlight','staff_pick','usd_pledged','backers_count', 'is_starrable','disable_communication','goal','static_usd_rate','location','country_displayable_name','name','blurb']
     df = df.drop(droppable, axis=1)
-    
     # df = df[df.columns[[4,6,7,9,0,10,2,5,8,3,11]]]
 
     return df
