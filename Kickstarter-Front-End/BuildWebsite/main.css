@@ -1,0 +1,93 @@
+.header{
+    min-height: 97vh;
+    width:cover;
+    background-image: linear-gradient(rgba(0, 174, 255, 0.7),rgba(250, 251, 253, 0.7)), url(images/17545.jpg);
+    background-size: 100x;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+/**Navigation Bar**/
+nav {
+    display: flex;
+    padding: 4% 6%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 2px;
+   
+}
+
+nav img {
+    width: 200px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display:inline-block;
+    padding: 8px 15px;
+    position:relative;
+}
+.nav-links ul li a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition:0.5s ;
+    word-spacing: 12px;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+/*text box*/
+.text-box{
+    width: 100%;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 38%;
+    left:center;
+    transform: translate(-50,-50);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+    text-align: center;
+    
+}
+.text-box p{
+    margin: 30px 0 40px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+
+}
+
+/*Predict button*/
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 3px solid #38b6ff;
+    padding: 12px 34px;
+    font-size: 16px;
+    background:transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #38b6ff;
+    background:#38b6ff;
+    transition: 2s;
+
+}
