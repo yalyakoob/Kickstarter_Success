@@ -21,7 +21,7 @@ def init_model_input():
     return feature_vector
 
 
-def generate_prediction(goal, duration, category, country):
+def generate_prediction(project_category, funding_goal, funding_period, country):
     """
     'goal': float
     'duration': int
@@ -32,15 +32,21 @@ def generate_prediction(goal, duration, category, country):
     """
     feature_vector = init_model_input()
 
-    user_category = 'category_' + category
+    user_category = 'category_' + project_category
     user_country = 'country_' + country
 
-    feature_vector['goal_usd'] = goal 
-    feature_vector['campaign_duration_in_days'] = duration
-    feature_vector['user_category'] = int(1)
-    feature_vector['user_country'] = int(1)
+    feature_vector['goal_usd'] = funding_goal 
+    feature_vector['campaign_duration_in_days'] = funding_period
+    feature_vector[user_category] = int(1)
+    feature_vector[user_country] = int(1)
 
-    prediction = xgb_model.predict(feature_vector)
-    predict_proba = xgb_model.predict_proba(feature_vector)
+    # feature_vector.tonumpy() # PROBABLY NOT NECESSARY; df ok (but pd.Series?)
+
+    prediction = xgb_model.predict(X=feature_vector, validate_features=False)
+    predict_proba = xgb_model.predict_proba(X=feature_vector, validate_features=False)
     
     return prediction, predict_proba
+
+# <https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier>
+# <https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier.predict>
+# <https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier.predict_proba>
