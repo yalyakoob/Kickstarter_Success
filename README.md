@@ -8,11 +8,11 @@ Our goal with this project is to help determine whether a kickstarter campaign w
 
 **Kickstarter** is a website that lets a user describe an event, product, or service they wish to produce, and lets them attempt to raise a target amount of money for the project by allowing donors to donate through their service over a limited campaign period.  If the goal is met, funds are then transfered to the user's team, and production begins.  If the goal is not met, no funds are given, and all donors are refunded, which allows donors to support projects they want to see succeed in a low risk enviornment.
 
-## Our Success Predictor & Instructions
+## Success Predictor & Instructions
 
-#### website 
+#### **[Our Website](https://kickstarter--predictor-rasp.herokuapp.com/foresight)**
 
-describe how to use
+Go to the link above.  From first drop down menu, select the category your project will fall under (Our model does not have enough data to predict categories outside of those listed).  Then, manually input your target goal in USD, and your campaign duration in days.  To convert your local currency to USD, you can use **[this currency converter](https://finance.yahoo.com/currency-converter)**, or use another of your choice.  Next, Select your country from the dropdown menu.  If it is not listed, select "Other".  Finally, click on the "Submit" button on the right.  On the lower left, in a blue box, your prediction of "Success" or "Failure" will show, along with the precent chance out of one of the predicted result (so .88 would translate to an 88% chance).
 
 ## How it works
 
