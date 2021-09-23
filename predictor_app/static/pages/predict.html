@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, intitial-scale=1.0" />
+        <style>
+         
+        /* .fields {
+            width: 90%;
+        } */
+
+        p {
+            font-size: 18px;
+        } 
+
+        .feature_str {
+            size: auto;
+            /* font-family: verdana; */
+            float: left;
+            width: 20%;
+            font-size: 18px;
+            text-align: left;
+        }
+            
+        .feature_num {
+            size: auto;
+            /* font-family: verdana; */
+            float: left;
+            width: 20%;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        input[type=text], input[type=number], select {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            /* width: 10%; */
+            background: rgba(76, 175, 80, 0.5);
+            /* background-color:peachpuff; */
+            color: midnightblue;
+            padding: 12px 20px;
+            margin: 8px 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            /* float: right; */
+            position: absolute;
+            /* z-index: -1; */
+            /* right: 1px; */
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            background-color:rosybrown;
+        }
+
+        blockquote {
+            font-size: 20px;
+            border-radius: 8px;
+            width: 50%;
+            /* background-color:lightgreen; */
+        }
+        /* div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        } */
+
+        .drum_roll {
+            padding: 60px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 30px;
+        }
+          
+        </style>
+        <title>Kickstarter Success Prediction</title>
+        <link rel="stylesheet" href="../assets/main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" type="image/png" href="../images/kickstarter.png" sizes="300" />
+    </head> 
+    <section class="header">
+        <nav>
+            <a href="main.html"><img src="../images/kickstarter.png" alt="" /></a>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="../pages/predict.html">Prediction</a></li>
+                    <!--<li><a href="Add a link to an article">Article</a></li>-->
+                    <!--<li><a href="prafsafafsml">asfdaad</a></li>-->
+                    <li><a href="../pages/team.html">The Team</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </section>
+
+    <body>
+        <div class="text-box">
+
+            <h1>Predict a Kickstarter Success</h1>
+            <p>Cutting-edge AI and big, big data -- our model knows Kickstarter cold.<br><br>Would your campaign succeed? Input 4 features to find out.</p>
+
+            <form action="/foresight" method="post">
+            <div class="fields">
+
+                    <div class="feature_str">
+                        <label for="project_category">Category:</label>
+                        <select id="project_category" name="project_category" placeholder="a project like..." required>
+                            <option value="art">art</option>
+                            <option value="music">music</option>
+                            <option value="crafts">crafts</option>
+                            <option value="comics">comics</option>
+                            <option value="food">food</option>
+                            <option value="publishing">publishing</option>
+                            <option value="technology">technology</option>
+                            <option value="journalism">journalism</option>
+                            <option value="design">design</option>
+                            <option value="film_and_video">film_and_video</option>
+                            <option value="theater">theater</option>
+                            <option value="games">games</option>
+                            <option value="photography">photography</option>
+                            <option value="fashion">fashion</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="feature_num">
+                        <label for="funding_goal">Funding Goal:</label>
+                        <input type="number" min="1" max="999999" id="funding_goal" name="funding_goal" placeholder="in USD ($)" required>
+                    </div>
+
+                    <div class="feature_num">
+                        <label for="funding_period">Campaign Duration:</label>
+                        <input type="number" min="1" max="3650" id="funding_period" name="funding_period" placeholder="in days" required>
+                    </div>
+  
+                    <div class="feature_str">
+                        <label for="country">Country:</label>
+                        <select id="country" name="country" placeholder="where you live" required>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="GB">Great Britain</option>
+                            <option value="other">Middle Earth</option>
+                            <option value="other">Argentina</option>
+                            <option value="other">The Vatican</option>
+                            <option value="other">Saturn</option>
+                    </div>
+
+                    <div class="action">
+                        <li><input type="submit" value="Submit" class="button primary"></input></li>
+                    </div>
+            </div>
+
+            
+                <!-- <div>
+                    <table>
+                        <div class="drum_roll">
+                            <p>{{ xgb_proba }} probability of</p>
+                            <h1>{{ xgb_pred }}</h1>
+                        </div>
+                    </table>							
+                </div> -->
+
+            
+            </form>   
+        </div> 
+
+    </body>
+    <!-- <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function flip() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function filter() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+        </script> -->
+</html>

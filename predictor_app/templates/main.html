@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, intitial-scale=1.0">
+        <title>Kickstarter Success Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/main.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/kickstarter.png') }}" sizes="300">
+    </head> 
+    <section class="header">
+        <nav>
+            <a href="main.html"><img src="{{ url_for('static', filename='images/kickstarter.png') }}" alt=""></a>
+            <div class="nav-links" id="navLinks">
+            
+                <ul>
+                    <li><a href="{{ url_for('static', filename='pages/predict.html') }}"> Prediction </a></li>
+                    <!--<li><a href="Add a link to an article">Article</a></li>-->
+                    <!--<li><a href="prafsafafsml">asfdaad</a></li>-->
+                    <li><a href="{{ url_for('static', filename='pages/team.html') }}">The Team</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+        <div class="text-box">
+            <h1>Predict a Kickstarter Success</h1>
+            <p>A project created by Mark Porath, Fadil Shaikh, Youssef Al-Yakoob, and Zack Rock<br></p>
+            <a href="{{ url_for('static', filename='pages/predict.html') }}" class="hero-btn">PREDICT YOUR SUCCESS</a>
+    
+        </div> 
+    </section>
+</html>

@@ -1,7 +1,7 @@
 .header{
     min-height: 97vh;
     width:cover;
-    background-image: linear-gradient(rgba(0, 174, 255, 0.7),rgba(250, 251, 253, 0.7)), url(images/17545.jpg);
+    background-image: linear-gradient(rgba(0, 174, 255, 0.7),rgba(250, 251, 253, 0.7)), url(../images/17545.jpg);
     background-size: 100x;
     background-position: center;
     background-size: cover;
@@ -55,13 +55,13 @@ nav img {
     width: 100%;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 38%;
+    top: 20%;
     left:center;
     transform: translate(-50,-50);
     text-align: center;
 }
 .text-box h1{
-    font-size: 62px;
+    font-size: 60px;
     text-align: center;
     
 }

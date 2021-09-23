@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, intitial-scale=1.0" />
+        <style>
+          .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+          }
+          
+          #myInput {
+            box-sizing: border-box;
+            /* background-image: url('...png'); */
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+          }
+          
+          #myInput:focus {outline: 3px solid #ddd;}
+          
+          .dropdown {
+            position: relative;
+            /* display: inline-block; */
+            float: left;
+            width: 20%;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          
+          .dropdown a:hover {background-color: #ddd;}
+          
+          .show {display: block;}
+ 
+          .drum_roll {
+            padding: 60px;
+            text-align: center;
+            background: #100ab5;
+            color: white;
+            font-size: 30px;
+            }
+          
+        </style>
+        <title>Kickstarter Success Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/main.css') }}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" type="image/png" href="..static/images/kickstarter.png" sizes="300" />
+    </head> 
+    <body>
+        <section class="header">
+            <nav>
+                <a href="main.html"><img src="..static/images/kickstarter.png" alt="" /></a>
+                <div class="nav-links" id="navLinks">
+                
+                    <ul>
+                            <li><a href="../static/pages/predict.html">Prediction</a></li>
+                            <!--<li><a href="Add a link to an article">Article</a></li>-->
+                            <!--<li><a href="prafsafafsml">asfdaad</a></li>-->
+                            <li><a href="../pages/team.html">The Team</a></li>
+
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="text-box">
+
+                <h1>Predict a Kickstarter Success</h1>
+                <p>Based on the latest AI and half a million Kickstarter campaigns, our trained model will help you decide: simply input these four features, and see how probable *your* funding would be.<br></p>
+
+                <form action="/foresight" method="post">
+                    <div class="fields">
+                      <div class="dropdown">
+                        <label for="project_category">Category:</label>
+                        <select id="project_category" name="project_category" placeholder="a project like...">
+                          <option value="art">art</option>
+                          <option value="music">music</option>
+                          <option value="crafts">crafts</option>
+                          <option value="comics">comics</option>
+                          <option value="food">food</option>
+                          <option value="publishing">publishing</option>
+                          <option value="technology">technology</option>
+                          <option value="journalism">journalism</option>
+                          <option value="design">design</option>
+                          <option value="film_and_video">film_and_video</option>
+                          <option value="theater">theater</option>
+                          <option value="games">games</option>
+                          <option value="photography">photography</option>
+                          <option value="fashion">fashion</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <label for="funding_goal">Funding Goal:</label>
+                        <input type="number" id="funding_goal" name="funding_goal" placeholder="in USD ($)">
+                    </div>
+
+                    <div class="dropdown">
+                        <label for="funding_period">Campaign Duration:</label>
+                        <input type="number" id="funding_period" name="funding_period" placeholder="in days">
+                    </div>
+
+                    <div class="dropdown">
+                        <label for="country">Country:</label>
+                        <select id="country" name="country" placeholder="where you live">
+                          <option value="US">United States</option>
+                          <option value="CA">Canada</option>
+                          <option value="GB">Great Britain</option>
+                          <option value="other">Middle Earth</option>
+                          <option value="other">Argentina</option>
+                          <option value="other">The Vatican</option>
+                          <option value="other">Saturn</option>
+                    </div>
+
+
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Submit" class="button primary"></input></li>
+                    </ul>
+                    <section>
+                    <div>
+                        <table>
+                            <div class="drum_roll">
+                                <h3>{{ xgb_proba }} probability of...</h3>
+                                <h1>{{ xgb_pred }}</h1>
+                            </div>
+                        </table>							
+                    </div>
+                    </section>
+                
+                </form>   
+            </div> 
+
+        </section>
+    </body>
+    <!-- <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function flip() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function filter() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+        </script> -->
+</html>
