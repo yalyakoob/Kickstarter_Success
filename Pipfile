@@ -24,6 +24,7 @@ python-dotenv = "*"
 gunicorn = "*"
 beautifulsoup4 = "*"
 spacytextblob = "*"
+xgboost = "*"
 
 [dev-packages]
 
