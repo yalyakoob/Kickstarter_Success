@@ -10,9 +10,9 @@ Our goal with this project is to help determine whether a kickstarter campaign w
 
 ## Success Predictor & Instructions
 
-#### **[Our Website](https://kickstarter--predictor-rasp.herokuapp.com/foresight)**
+#### **[Our Website](https://kickstarter--predictor-rasp.herokuapp.com)**
 
-Go to the link above.  From first drop down menu, select the category your project will fall under (Our model does not have enough data to predict categories outside of those listed).  Then, manually input your target goal in USD, and your campaign duration in days.  To convert your local currency to USD, you can use **[this currency converter](https://finance.yahoo.com/currency-converter)**, or use another of your choice.  Next, Select your country from the dropdown menu.  If it is not listed, select "Other".  Finally, click on the "Submit" button on the right.  On the lower left, in a blue box, your prediction of "Success" or "Failure" will show, along with the precent chance out of one of the predicted result (so .88 would translate to an 88% chance).
+Go to the link above.  From first drop down menu, select the category your project will fall under (Our model does not have enough data to predict categories outside of those listed).  Then, manually input your target goal in USD, and your campaign duration in days.  To convert your local currency to USD, you can use **[this currency converter](https://finance.yahoo.com/currency-converter)**, or use another of your choice.  Next, Select your country from the dropdown menu.  If it is not listed, select "Other".  Finally, click on the "Submit" button on the right.  Scroll to the bottom of the page, on the lower left, in a blue box, your prediction of "Success" or "Failure" will show, along with the precent chance out of one of the predicted result (so .88 would translate to an 88% chance).
 
 ## How it works
 
