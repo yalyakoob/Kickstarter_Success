@@ -13,7 +13,7 @@ def create_app():
 
     with app.app_context():
         from .model_input_funcs import xgb_model, init_model_input, generate_prediction
-        from .features_scrape import KickSoup
+        # from .features_scrape import KickSoup
 
 
    # ROOT ROUTE
