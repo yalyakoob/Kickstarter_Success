@@ -1,4 +1,4 @@
-![image](https://github.com/Build-Week-Kickstarter-Success-2021/Kickstarter_Success/blob/main/assets/kickstarter.png)
+![image](https://github.com/Build-Week-Kickstarter-Success-2021/Kickstarter_Success/blob/main/predictor_app/static/images/kickstarter.png)
 
 # Kickstarter Successs Predictor
 
