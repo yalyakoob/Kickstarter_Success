@@ -1,6 +1,6 @@
 ![image](https://github.com/Build-Week-Kickstarter-Success-2021/Kickstarter_Success/blob/main/predictor_app/static/images/kickstarter.png)
 
-# Kickstarter Successs Predictor
+# Kickstarter Success Predictor
 
 Our goal with this project is to help determine whether a kickstarter campaign will succeed or fail based on the initial product proposal, by having an app the user can enter their project's data into and recieve a predicted result of "success" or "failure".
 
